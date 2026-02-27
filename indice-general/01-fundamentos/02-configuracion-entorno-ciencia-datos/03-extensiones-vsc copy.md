@@ -35,3 +35,4 @@ Esto vinculará tu entorno de trabajo entre múltiples dispositivos.
 - [Material Icon Theme : pkief.material-icon-theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Bracket Pair Colorization Togg : dzhavat.bracket-pair-toggler](https://marketplace.visualstudio.com/items?itemName=dzhavat.bracket-pair-toggler)
 - [indent-rainbow : oderwat.indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+- [autopep8 : ms-python.autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8)
