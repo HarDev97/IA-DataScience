@@ -1,4 +1,4 @@
-# 📘 Scriptorium
+# 📘 IA-DataScience
 
 ### _Compendio de resúmenes y proyectos para aprender programación y ciencia de datos_
 
@@ -10,23 +10,13 @@ Cada carpeta representa una **sección** del tomo, y cada sección contiene mate
 
 ### **I. Fundamentos**
 
-- `01-configuracion-entorno-windows/` — Configuración del entorno subsistema linux en windows, instalación y configuración de nodejs, npm, pyhton y github.
+- Carpeta `01-fundamentos/01-configuracion-entorno-windows/` — Configuración del entorno subsistema linux en windows, instalación y configuración de nodejs, npm, pyhton y github.
 
-- `02-configuracion-entorno-ciencia-datos/` — Configuración del entorno para ciencia de datos, manejador de paquetes, visual estudio code e instalación de extensiones.
-
-### **II. Programación Intermedia**
-
-### **III. Ciencia de Datos**
-
-### **IV. Ingeniera de Software en Inteligencia Artificial**
-
-### **V. Proyectos Aplicados**
-
-### **VI. Recursos y Notas**
+- Carpeta `01-fundamentos/02-configuracion-entorno-ciencia-datos/` — Configuración del entorno para ciencia de datos, manejador de paquetes, visual estudio code e instalación de extensiones.
 
 ---
 
-## 🧭 Cómo usar este Scriptorium
+## 🧭 Objetivo
 
 Este repositorio está organizado como un **libro de estudio**, donde cada carpeta funciona como un **capítulo**.  
 Puedes recorrerlo de forma lineal o saltar directamente a la sección que necesites.
