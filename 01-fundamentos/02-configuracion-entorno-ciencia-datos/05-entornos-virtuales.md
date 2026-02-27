@@ -1,4 +1,4 @@
-## 🔷 Ambientes virtuales
+## 🔷 Entornos virtuales
 
 `Conda` es una herramienta esencial para la gestión de paquetes y entornos, que facilita el trabajo con diversos lenguajes de programación como Python y R.
 
@@ -57,7 +57,7 @@ Si deseas conocer mayor detalle ejecuta,
 conda info
 ```
 
-Podrás ver el ambiente en el que estás (base, etc), la ubicación de anaconda entre otros detalles.
+Podrás ver el entorno virtual en el que estás (base, etc), la ubicación de anaconda entre otros detalles.
 
 ### 2. Ejecutar Jupyer NoteBook
 
@@ -81,4 +81,98 @@ code .
 
 Luego crea un archivo con la extensión **.ipynb** ejemplo: `notebook.ipynb`. Ingresa al archivo, en la parte superior derecha verás la acción **Select Kernel** da click allí y luego selecciona el entorno base(Python #versión)
 
-**Recomendación**: Si no ves el kernel solo es cuestión de cerrar tu visual y volver abrir, esto hará que refresque y detecte el nuevo entorno.
+**Recomendación**: Si no ves el kernel pudes probar recargando con `CTRL + R` o solo es cuestión de cerrar tu visual y volver abrir, esto hará que refresque y detecte el nuevo entorno.
+
+### 4. Entornos virtuales con conda
+
+**Consultar entornos virtuales**
+
+Visualiza tus entornos virtuales con
+
+```bash
+conda env list
+```
+
+**Crear entorno virtual**
+
+Estructura conda create --name `[nombre-entorno] [paquetes]`
+
+\*Flag `--name` se utliza para darle nombre al nuevo entorno virtual. Si no se específica la versión de los paquetes se instalará la más reciente
+
+Para crear tus entornos virtuales ejecuta
+
+```bash
+conda create --name env python pandas
+```
+
+**Activar entorno virtual**
+
+```bash
+conda activate env
+```
+
+Visualiza la lista de tus paquetes de tu nuevo entorno virtual y sus respectivas versiones con
+
+```bash
+conda list
+```
+
+Visualiza un paquete específico de tu nuevo entorno virtual y sus respectiva versión con
+
+```bash
+conda list pandas
+```
+
+**Desactivar entorno virtual**
+
+```bash
+conda deactivate
+```
+
+**Actualizar paquetes de tu entorno virtual**
+
+- Usando update
+
+  Actualiza un paquete específico de tu nuevo entorno virtual
+
+  \*Este comando actualizará a la versión más reciente
+
+  ```bash
+  conda update pandas
+  ```
+
+- Usando install
+
+  Actualiza un paquete específico de tu nuevo entorno virtual, con este comando podrás específicar la versión que requieres
+
+  ```bash
+  conda install python=3.9 pandas=1.2
+  ```
+
+**Copiar un entorno virtual**
+
+Para clonar un entorno ejecuta
+
+```bash
+conda create --name py39 --copy --clone env
+```
+
+**Eliminar un paquete de un entorno virtual**
+
+Para eliminar un paquete de un entorno ejecuta
+
+```bash
+conda remove pandas
+```
+
+**Eliminar un entorno virtual**
+
+Para eliminar un entorno virtual ejecuta
+
+\*Flag `--name` se utliza para especificar nombre del entorno a eliminar.
+
+\*Solo puedes eliminar un entorno que no estés utilizando.
+
+```bash
+conda env remove --name env
+```
