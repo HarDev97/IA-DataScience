@@ -176,3 +176,21 @@ Para eliminar un entorno virtual ejecuta
 ```bash
 conda env remove --name env
 ```
+
+### 5. Comandos conda para gestión de entornos virtuales
+
+**Instalar un paquete que no se encuentra en los canales actuales**
+
+Esto se utiliza cuando conda no encuentra un paquete
+
+Ingresa a [Anaconda](https://anaconda.org/) en la barra de busqueda escribiremos el paquete
+
+Ejemplo:
+
+![alt text](../../recursos/imagenes/canal-1.jpg)
+
+![alt text](../../recursos/imagenes/canal-2.jpg)
+
+```bash
+conda install boltons
+```
