@@ -183,7 +183,7 @@ conda env remove --name env
 
 Esto se utiliza cuando conda no encuentra un paquete
 
-Ingresa a [Anaconda](https://anaconda.org/) en la barra de busqueda escribiremos el paquete
+Ingresa a [Anaconda](https://anaconda.org/) y en la barra de busqueda escribiremos el paquete
 
 Ejemplo:
 
@@ -194,3 +194,61 @@ Ejemplo:
 ```bash
 conda install boltons
 ```
+
+Una vez encontrado el paquete, ejecutaremos el siguiente comando manteniendo la estructura 
+
+Flag `--channel`, `nombre-canal` y `nombre-paquete`
+
+```bash
+conda install --channel conda-forget boltons
+```
+
+**Tracking de instalaciones**
+
+Cada instalación genera un tracking lo cual permite llevar un control de cambios en el tienpo. Este tracking consta de diferentes revisiones.
+
+Para listar las revisiones ejecuta
+
+```bash
+conda list --revision
+```
+Una vez obtengas el listado, fíjate en el índice generado por cada revision, mediante este indice podras regresar a cierto cambio realizado.
+
+Para ello ejecuta para el siguiente comando con la estructura 
+
+Flag `--revision` e indicar `indice`
+
+```bash
+conda Install --revision 0
+```
+**Exportar un ambiente**
+
+Para exportar un ambiente que se requiere compartir ejecuta el comando manteniendo la estructura 
+
+Flag `--from-history` para exportar las dependencias instaladas de forma manual
+
+Flag `--file` para indicar que se generará un archivo, este flag debera anteceder el nombre del archivo junto con su extensión `.yml`
+
+```bash
+conda env export --from-history --file environment.yml
+```
+
+Con este comando Conda exportará los paquetes que se instalaron manualmente, es útil para implementar difernetes sistemas operativos.
+
+**Estos ambientes quedarán guardados en ~/anaconda3/envs
+
+**Instalación del ambiente exportado**
+
+Para instalar el ambiente exportado se debe desactivar cualquier ambiente activo, para ello ejecuta
+
+```bash
+conda deactivate
+```
+Asegurate, de estar en el ambiente base y guardar el archivo previamente exportado en la ruta ~/anaconda3/envs
+
+Luego ejecuta el comando especificando el nombre del archivo y su extensión
+
+```bash
+conda env create --file environment.yml
+```
+
