@@ -24,10 +24,6 @@ Una vez abierto VSC ve al panel izquierdo y da clic en el ícono de "Extensions"
 
 Lueo busca la extensión WSL e instálala dando click al botón azul "Install"
 
-<iframe src="../../recursos/imagenes/remote-wsl-1.png" width="600" height="400">
-
-</iframe>
-
 ![alt text](../../recursos/imagenes/remote-wsl-1.png)
 
 Puedes comprobar en la parte inferior izquierda de tu editor, verás un recuadro verde que indica que estás en WSL y qué versión de Linux utilizas
