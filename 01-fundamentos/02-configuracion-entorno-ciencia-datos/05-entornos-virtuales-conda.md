@@ -141,13 +141,13 @@ conda deactivate
   conda update pandas
   ```
 
-- Usando install
+Usando install
 
-  Actualiza un paquete específico de tu nuevo entorno virtual, con este comando podrás específicar la versión que requieres
+Actualiza un paquete específico de tu nuevo entorno virtual, con este comando podrás específicar la versión que requieres
 
-  ```bash
-  conda install python=3.9 pandas=1.2
-  ```
+```bash
+conda install python=3.9 pandas=1.2
+```
 
 **Copiar un entorno virtual**
 
@@ -252,3 +252,101 @@ Luego ejecuta el comando especificando el nombre del archivo y su extensión
 ```bash
 conda env create --file environment.yml
 ```
+
+### 6. Instalar Mamba
+
+**Acelerar creación de ambientes con mamba**
+
+Diseñada específicamente para optimizar la creación y gestión de ambientes virtuales, resolviendo dependencias de manera paralela y mejorando significativamente la velocidad.
+
+Instalar mamba, para ello crea un nuevo entorno donde instalar mamba, de esa forma evitarás conflictos con el entorno base. Ejecuta
+
+```bash
+conda create -n entorno-mamba -c conda-forge mamba
+conda activate entorno-mamba
+```
+
+**Comandos Mamba**
+
+Para listar los comandos que maneja mamba. Ejecuta:
+
+```bash
+mamba --help
+```
+
+**Crear ambientes con mamba**
+
+Para crear un ambiente con mamba de un entorno exportado en archivo .yml, ejecuta:
+
+```bash
+mamba env create --file nombre-archivo.yml
+```
+
+### 7. Gestionar entornos en proyectos
+
+**¿Cómo aplicar el algoritmo de Divide y Vencerás en ambientes virtuales?**
+
+El manejo de ambientes virtuales en proyectos grandes puede convertirse en un desafío titánico. Optar por el algoritmo de "Divide y Vencerás" puede ser la clave para gestionar estos ambientes de manera eficiente. Este enfoque permite dividir un problema complejo en partes más pequeñas y manejables. Aquí descubrirás cómo colocar esta estrategia en práctica al trabajar con ambientes virtuales, ahorrándote horas de posibles complicaciones.
+
+**¿Qué es el algoritmo de Divide y Vencerás?**
+
+El algoritmo de Divide y Vencerás se refiere a un método que resuelve problemas complejos descomponiéndolos en subproblemas más pequeños, fáciles de resolver por separado. Una vez solucionadas las partes individuales, se combinan para resolver el problema original. Aplicado a los ambientes virtuales, significa crear ambientes más pequeños y específicos dentro de un gran entorno de desarrollo.
+
+**¿Por qué dividir un ambiente virtual?**
+
+Los ambientes virtuales permiten mantener proyectos independientes y evitar que cambios en uno afecten negativamente a otros. Sin embargo, en un ambiente gigantesco con miles de dependencias, una simple actualización podría causar inestabilidad en el proyecto. Aquí es donde la división se vuelve crucial:
+
+![alt text](../../recursos/imagenes/gestionar-entornos-1.png)
+
+- Control granular: Ofrece un mayor control sobre el proyecto y sus dependencias.
+- Estabilidad: Minimiza el riesgo de que actualizaciones generen conflictos en todo el sistema.
+- Flexibilidad: Facilita la gestión de actualizaciones sin impactar otros módulos.
+
+**¿Cómo implementar esta estrategia en Conda?**
+
+Para aplicar esta técnica en Conda, sigue estos pasos clave:
+
+- Estructura de archivos: Organiza tu proyecto en carpetas específicas (datos, modelos, notebooks).
+- Divide ambientes: En lugar de un único archivo environment.yml, crea una nueva carpeta ambientes y subdivide en archivos específicos para cada necesidad (por ejemplo, external.yml, model.yml y communication.yml).
+
+**Cómo funciona en la práctica**
+
+El enfoque de Divide y Vencerás no significa que un notebook use simultáneamente varios ambientes, sino que el proyecto completo se organiza en módulos, y cada módulo se ejecuta en su propio ambiente cuando lo necesitas.
+
+Un notebook = un kernel/ambiente.  
+Cuando abres un notebook en VS Code, eliges el kernel correspondiente. Ese kernel está ligado a un ambiente virtual específico.
+
+Varios ambientes = varios kernels disponibles.  
+Si tu proyecto tiene tres ambientes (external.yml, model.yml, comunicacion.yml), entonces tendrás tres kernels distintos registrados. Cada notebook se abre con el kernel que corresponde a su propósito.
+
+![alt text](../../recursos/imagenes/gestionar-entornos-2.png)
+
+Divide y Vencerás aplicado:
+
+El notebook de preprocesamiento de datos se ejecuta con el kernel del ambiente external.yml (que contiene librerías de scraping, requests, etc.).
+
+El notebook de entrenamiento de modelos se ejecuta con el kernel del ambiente model.yml (que contiene TensorFlow, PyTorch, scikit-learn).
+
+El notebook de comunicación o visualización se ejecuta con el kernel del ambiente comunicacion.yml (que contiene matplotlib, seaborn, librerías de reporting).
+
+De esta manera, no mezclas dependencias pesadas en un solo ambiente gigante, sino que cada parte del proyecto tiene su propio entorno controlado.
+
+![alt text](../../recursos/imagenes/gestionar-entornos-3.png)
+
+**¿Qué herramienta complementa este enfoque?**
+
+Una herramienta que complementa perfectamente este método es Snakemake. Es un motor de flujo de trabajo que permite definir etapas del proyecto en Python, ejecutándolas en ambientes especializados automáticamente. Por ejemplo, cada paso en tu flujo de trabajo podría gestionarse por diferente ambiente asegurando que cada etapa se mantenga limpia y funcional.
+
+**¿Qué ventajas ofrece Snakemake?**
+
+- Automatización: Gestiona automáticamente la ejecución de pasos en ambientes específicos.
+- Estructuración de proyectos: Define tus etapas de colección, procesamiento de datos y creación de modelos de manera individual.
+  Optimización de recursos: Evita dependencias innecesarias al ejecutar solo lo necesario en cada etapa.
+
+**¿Cómo se conecta todo?**
+
+Snakemake o Makefiles: permiten orquestar que cada etapa se ejecute en su ambiente correcto. Tú defines reglas: “para entrenar el modelo usa este ambiente”, “para graficar usa este otro”.
+
+VS Code/Jupyter: simplemente seleccionas el kernel adecuado para cada notebook. No necesitas que un notebook cambie de kernel en medio de la ejecución; lo importante es que cada notebook esté vinculado al ambiente correcto
+
+Este enfoque te permitirá actualizar sólo el ambiente de interés sin afectar el resto del proyecto.
