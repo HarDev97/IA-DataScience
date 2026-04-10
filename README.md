@@ -14,6 +14,8 @@ Cada carpeta representa una **sección** del tomo, y cada sección contiene mate
 
 - Carpeta `01-fundamentos/02-configuracion-entorno-ciencia-datos/` — Configuración del entorno para ciencia de datos, manejador de paquetes, visual estudio code e instalación de extensiones.
 
+- Carpeta `01-fundamentos/03-pip-entornos-virtuales` — Configuración del entorno con pip, manejador de paquetes
+
 ---
 
 ## 🧭 Objetivo

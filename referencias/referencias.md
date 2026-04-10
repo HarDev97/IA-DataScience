@@ -18,105 +18,19 @@ Configuración de WSL, instalación de Python, Node.js, Git, herramientas base.
 
 ### Carpeta: `02-configuracion-entorno-ciencia-datos/`
 
-**Temas cubiertos:**
+\*_Temas cubiertos: Configuración de entornos virtuales con pip, anaconda y mamba_
 
 **Fuentes:**
 
 - [Curso de Entorno de Trabajo para Ciencia de Datos con Jupyter Notebooks y Anaconda - Platzi](https://platzi.com/cursos/jupyter-notebook/)
 
----
+### Carpeta: `03-pip-entornos-virtuales/`
 
-## II. Programación Intermedia
-
-### Carpeta: `02-python-basico/`
-
-**Temas cubiertos:**  
-Sintaxis, estructuras de control, funciones, módulos.
+**Temas cubiertos:**
 
 **Fuentes:**
 
-- [Python Docs — Tutorial](https://docs.python.org/3/tutorial/)
-- [Real Python](https://realpython.com/)
-- [W3Schools Python](https://www.w3schools.com/python/)
-- Notas personales
-
----
-
-## III. Ciencia de Datos
-
-### Carpeta: `03-numpy/`
-
-**Temas cubiertos:**  
-Arreglos, operaciones vectorizadas, broadcasting.
-
-**Fuentes:**
-
-- [NumPy Documentation](https://numpy.org/doc/)
-- [SciPy Lectures](https://scipy-lectures.org/)
-- Notas personales
-
----
-
-### Carpeta: `04-pandas/`
-
-**Temas cubiertos:**  
-DataFrames, limpieza, transformación, análisis.
-
-**Fuentes:**
-
-- [Pandas Documentation](https://pandas.pydata.org/docs/)
-- [Data School Pandas Tutorials](https://www.dataschool.io/)
-- Notas personales
-
----
-
-## IV. Machine Learning
-
-### Carpeta: `05-ml-basico/`
-
-**Temas cubiertos:**  
-Conceptos fundamentales, modelos clásicos, flujo de trabajo.
-
-**Fuentes:**
-
-- [Scikit-Learn Documentation](https://scikit-learn.org/stable/)
-- [Machine Learning Crash Course — Google](https://developers.google.com/machine-learning/crash-course)
-- Notas personales
-
----
-
-## V. Proyectos Aplicados
-
-### Carpeta: `06-proyecto-analisis/`
-
-**Temas cubiertos:**  
-Análisis exploratorio, visualización, storytelling.
-
-**Fuentes:**
-
-- [Kaggle Notebooks](https://www.kaggle.com/)
-- [Matplotlib Documentation](https://matplotlib.org/stable/)
-- [Seaborn Documentation](https://seaborn.pydata.org/)
-- Notas personales
-
----
-
-## VI. Recursos y Notas
-
-### Carpeta: `07-referencias/`
-
-**Temas cubiertos:**  
-Material complementario, papers, libros, enlaces útiles.
-
-**Fuentes:**
-
-- Libros PDF
-- Papers académicos
-- Blogs técnicos
-- Videos de conferencias
-- Notas personales
-
----
+- [Curso de Python: PIP y Entornos Virtuales](https://platzi.com/cursos/python-pip/)
 
 ## 🏛️ Colofón
 
